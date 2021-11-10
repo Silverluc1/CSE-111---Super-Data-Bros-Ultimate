@@ -30,7 +30,16 @@ CREATE TABLE Attack(
 ;
 
 CREATE TABLE Movement(
-    leftright long,
-    updown long,
+
+    --Walk Speed
+    lr_walk long,
+    --Run Speed
+    lr_run long,
+    --Air Speed
+    lw_air long,
+    --Jump Height
+    u_height long,
+    --Hard Land
+    d_fallspeed int
 )
 ;
