@@ -31,6 +31,9 @@ CREATE TABLE Attack(
 
 CREATE TABLE Movement(
 
+    --the name of each character to relate to each value
+    characterID varchar(50),
+    
     --Walk Speed
     lr_walk long,
     --Run Speed
