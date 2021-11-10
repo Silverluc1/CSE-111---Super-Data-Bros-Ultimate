@@ -2,11 +2,32 @@
 
 CREATE TABLE Attack(
 
-    smashleft long,
-    smashright long,
-    smashUp long,
-    smashDown long
+    --the name of each character to relate to each value
+    characterID varchar(50),
+    
+    --smash input damage values
+    smash_leftright long,
+    smash_down long,
+    smash_up long,
+    
+    --tilt input damage values
+    tilt_leftright long,
+    tilt_down long,
+    tilt_up long,
+
+    --special input damage values
+    special_leftright long,
+    special_down long,
+    special_up long,
+
+    --aerial input damage values
+    aerial_right long,
+    aerial_left long,
+    aerial_up long,
+    aerial_down long
+
 )
+;
 
 CREATE TABLE Movement(
     leftright long,
