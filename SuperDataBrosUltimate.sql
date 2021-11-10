@@ -46,3 +46,23 @@ CREATE TABLE Movement(
     d_fallspeed int
 )
 ;
+
+CREATE TABLE Dodge(
+
+    --the name of each character to relate to each value
+    characterID varchar(50),
+
+    --Total Frames for spot dodge
+    s_total varchar(10),
+    --Amount of frames where character in intangible
+    s_intang int,
+    --Total Frames for Foward Roll
+    r_total varchar(10),
+    --Amount of frames where character in intangible
+    r_intang int,
+    --Total Frames for Non-Directional Airdodge
+    a_total varchar(10),
+    --Amount of frames where character in intangible
+    a_intang int
+)
+;
