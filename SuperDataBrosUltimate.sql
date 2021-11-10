@@ -1,0 +1,1 @@
+--This file will have the creation of the main SQL commands that would extract the data for display.
