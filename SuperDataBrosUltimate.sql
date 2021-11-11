@@ -66,3 +66,30 @@ CREATE TABLE Dodge(
     a_intang int
 )
 ;
+
+
+
+
+/*
+
+#### JUST AN EXAMPLE ON HOW TO CREATE AND ADD VALUES ON. TAKEN FROM EXAM ONCE GRADES WERE POSTED AND SOLUTION WAS RELEASED.#####
+CREATE TABLE Classes(
+
+    class varchar(50),
+    type varchar(2),
+    country varchar(50),
+    numGuns int,
+    bore int,
+    displacement long
+)
+;
+
+INSERT INTO Classes(class, type, country, numGuns, bore, displacement)
+
+    VALUES
+    ("Bismark", "bb", "Germany", 8, 15, 42000), ("Iowa", "bb", "USA", 9, 16, 46000),
+    ("Kongo", "bc", "Japan", 8, 14, 32000), ("North Carolina", "bb", "USA", 9, 16, 37000),
+    ("Renown", "bc", "Britain" , 6, 15, 32000), ("Revenge", "bb", "Britain", 8, 15, 29000),
+    ("Tennessee", "bb", "USA", 12, 14, 32000), ("Yamato", "bb", "Japan", 9, 18, 65000)
+;
+/*
