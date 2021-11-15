@@ -67,7 +67,12 @@ CREATE TABLE Dodge(
 )
 ;
 
-
+-- Example of SQL Statement?
+SELECT s_total AS SpotDodge
+FROM Dodge
+WHERE(
+    characterID = 'ROB'
+);
 
 
 /*
