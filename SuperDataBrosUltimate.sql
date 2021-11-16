@@ -90,6 +90,7 @@ INSERT INTO Dodge VALUES ('DLC1', 0, 'N/A', 0, 'N/A', 0, 'N/A');
 /* Special Cases */
 
 --For when user selects the other version of Simon aka Richter
+/*
 UPDATE Attack
 SET characterID = 'Richter'
 WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon';
@@ -101,6 +102,7 @@ WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon'
 UPDATE Dodge
 SET characterID = 'Richter'
 WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon';
+*/
 
 --If non new DLC character is not released, delete his data from table
 
