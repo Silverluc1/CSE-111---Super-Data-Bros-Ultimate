@@ -1,5 +1,9 @@
 --This file will have the creation of the main SQL commands that would extract the data for display.
 
+--Clears all the tables first
+DROP TABLE Attack;
+DROP TABLE Movement;
+DROP TABLE Dodge;
 
 --Creation of empty tables
 CREATE TABLE Attack(
