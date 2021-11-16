@@ -1,5 +1,7 @@
 --This file will have the creation of the main SQL commands that would extract the data for display.
 
+
+--Creation of empty tables
 CREATE TABLE Attack(
 
     --the name of each character to relate to each value
@@ -67,9 +69,23 @@ CREATE TABLE Dodge(
 )
 ;
 
+--INSERTION of data into empty tables
+
+INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
+INSERT INTO Attack VALUES('Luigi', 15.0, 15.0, 14.0, 9.0, 5.0, 6.0, 6.1, 2.0, 25.0, 8.0, 14.0, 10.0, 11.0);
+INSERT INTO Attack VALUES('Simon', 14.0, 12.0, 16.0, 10.0. 5.0, 10.0, 8.0, 2.0, 2.0, 12.0, 12.0, 12.0, 12.0);
+
+INSERT INTO Movement VALUES('Mario', 1.15, 1.76, 1.208, 36.33, 1.5);
+INSERT INTO Movement VALUES('Luigi', 1.134, 1.65, 0.77, 44, 1.32);
+INSERT INTO Movement VALUES('Simon', 0.76, 1.52, 0.94, 30, 1.85);
+
+INSERT INTO Dodge VALUES ('Mario', 25.0, '3-17', 29, '4-15', 52, '3-29'); 
+INSERT INTO Dodge VALUES ('Luigi', 25.0, '3-17', 29, '4-15', 57, '3-29');
+INSERT INTO Dodge VALUES ('Simon', 26.0, '3-17', 30, '4-15', 46, '3-29');
 
 
---These are the commands for mario
+
+--**************************************These are the commands for Mario**************************************--
 -- Smash attacks for Mario
 SELECT smash_leftright AS LR_Smash
 FROM Attack
