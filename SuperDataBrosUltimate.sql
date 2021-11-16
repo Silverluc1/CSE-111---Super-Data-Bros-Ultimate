@@ -53,21 +53,21 @@ CREATE TABLE Dodge(
     characterID varchar(50),
 
     --Total Frames for spot dodge
-    s_total varchar(10),
+    s_total int,
     --Amount of frames where character in intangible
-    s_intang int,
+    s_intang varchar(10),
     --Total Frames for Foward Roll
-    r_total varchar(10),
+    r_total int,
     --Amount of frames where character in intangible
-    r_intang int,
+    r_intang varchar(10),
     --Total Frames for Non-Directional Airdodge
-    a_total varchar(10),
+    a_total int,
     --Amount of frames where character in intangible
-    a_intang int
+    a_intang varchar(10)
 )
 ;
 
--- Example of SQL Statement?
+-- spot dodge for mario
 SELECT s_total AS SpotDodge
 FROM Dodge
 WHERE(
