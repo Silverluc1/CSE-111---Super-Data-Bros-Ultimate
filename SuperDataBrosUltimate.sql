@@ -395,3 +395,160 @@ WHERE(
 );
 
 --**************************************END of the commands for Luigi**************************************--
+
+
+
+--**************************************These are the commands for Simon**************************************--
+-- Smash attacks for Simon
+SELECT smash_leftright AS LR_Smash
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT smash_down AS DownSmash
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT smash_up AS UpSmash
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+--Tilt attacks for Simon
+
+SELECT tilt_leftright AS LR_Tilt
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT tilt_down AS DownTilt
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT tilt_up AS UpTilt
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+--Special attacks for Simon
+
+SELECT special_leftright AS LR_Special
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT special_down AS DownSpecial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);SELECT special_up AS UpSpecial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+--Aerial attacks for Simon
+SELECT aerial_right AS RightAerial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT aerial_left AS LeftAerial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+SELECT aerial_up AS UpAerial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT aerial_down AS DownAerial
+FROM Attack
+WHERE(
+    characterID = 'Simon'
+);
+
+
+--All movement statements for Simon
+SELECT lr_walk AS LR_Walk
+FROM Movement
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT lr_run AS LR_Run
+FROM Movement
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT lr_air AS LR_Air
+FROM Movement
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT u_height AS JumpHeight
+FROM Movement
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT d_fallspeed AS FallingSpeed
+FROM Movement
+WHERE(
+    characterID = 'Simon'
+);
+
+
+-- All Dodgeing SQL statments for Simon
+
+SELECT s_total AS SpotTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT s_intang AS SpotFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT r_total AS RollTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT r_intang AS RollFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT a_total AS AirTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+SELECT a_intang AS AirFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Simon'
+);
+
+--**************************************END of the commands for Simon**************************************--
