@@ -1,5 +1,7 @@
 #test running
 
-database = "final.sqlite"
+db="final.sqlite"
 
 sqlite3 $db < SuperDataBrosUltimate.sql
+
+printf "test finished";
