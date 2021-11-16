@@ -74,14 +74,40 @@ CREATE TABLE Dodge(
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
 INSERT INTO Attack VALUES('Luigi', 15.0, 15.0, 14.0, 9.0, 5.0, 6.0, 6.1, 2.0, 25.0, 8.0, 14.0, 10.0, 11.0);
 INSERT INTO Attack VALUES('Simon', 14.0, 12.0, 16.0, 10.0. 5.0, 10.0, 8.0, 2.0, 2.0, 12.0, 12.0, 12.0, 12.0);
+INSERT INTO Attack VALUES('DLC1', 0, 0, 0, 0. 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO Movement VALUES('Mario', 1.15, 1.76, 1.208, 36.33, 1.5);
 INSERT INTO Movement VALUES('Luigi', 1.134, 1.65, 0.77, 44, 1.32);
 INSERT INTO Movement VALUES('Simon', 0.76, 1.52, 0.94, 30, 1.85);
+INSERT INTO Movement VALUES('DLC1', 0, 0, 0, 0, 0);
 
 INSERT INTO Dodge VALUES ('Mario', 25.0, '3-17', 29, '4-15', 52, '3-29'); 
 INSERT INTO Dodge VALUES ('Luigi', 25.0, '3-17', 29, '4-15', 57, '3-29');
 INSERT INTO Dodge VALUES ('Simon', 26.0, '3-17', 30, '4-15', 46, '3-29');
+INSERT INTO Dodge VALUES ('DLC1', 0, 'N/A', 0, 'N/A', 0, 'N/A');
+
+
+/* Special Cases */
+
+--For when user selects the other version of Simon aka Richter
+UPDATE Attack
+SET charcterID = 'Richter'
+WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon';
+
+UPDATE Movement
+SET charcterID = 'Richter'
+WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon';
+
+UPDATE Dodge
+SET charcterID = 'Richter'
+WHERE characterID != 'Mario' OR characterID != 'Luigi' OR characterID != 'Simon';
+
+--If non new DLC character is not released, delete his data from table
+
+DELETE FROM Attack WHERE characterID = 'DLC1'
+DELETE FROM Movement WHERE characterID = 'DLC1'
+DELETE FROM Dodge WHERE characterID = 'DLC1'
+
 
 
 
