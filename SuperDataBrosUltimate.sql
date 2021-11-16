@@ -237,6 +237,161 @@ WHERE(
     characterID = 'Mario'
 );
 
+--**************************************END of the commands for Mario**************************************--
 
 
 
+--**************************************These are the commands for Luigi**************************************--
+-- Smash attacks for Luigi
+SELECT smash_leftright AS LR_Smash
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT smash_down AS DownSmash
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT smash_up AS UpSmash
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+--Tilt attacks for Luigi
+
+SELECT tilt_leftright AS LR_Tilt
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT tilt_down AS DownTilt
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT tilt_up AS UpTilt
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+--Special attacks for Luigi
+
+SELECT special_leftright AS LR_Special
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT special_down AS DownSpecial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);SELECT special_up AS UpSpecial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+--Aerial attacks for Luigi
+SELECT aerial_right AS RightAerial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT aerial_left AS LeftAerial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+SELECT aerial_up AS UpAerial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT aerial_down AS DownAerial
+FROM Attack
+WHERE(
+    characterID = 'Luigi'
+);
+
+
+--All movement statements for Luigi
+SELECT lr_walk AS LR_Walk
+FROM Movement
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT lr_run AS LR_Run
+FROM Movement
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT lr_air AS LR_Air
+FROM Movement
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT u_height AS JumpHeight
+FROM Movement
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT d_fallspeed AS FallingSpeed
+FROM Movement
+WHERE(
+    characterID = 'Luigi'
+);
+
+
+-- All Dodgeing SQL statments for Luigi
+
+SELECT s_total AS SpotTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT s_intang AS SpotFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT r_total AS RollTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT r_intang AS RollFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT a_total AS AirTotalFrames
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+SELECT a_intang AS AirFramesIntangible
+FROM Dodge
+WHERE(
+    characterID = 'Luigi'
+);
+
+--**************************************END of the commands for Luigi**************************************--
