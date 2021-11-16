@@ -71,7 +71,7 @@ CREATE TABLE Dodge(
 SELECT s_total AS SpotDodge
 FROM Dodge
 WHERE(
-    characterID = 'ROB'
+    characterID = 'Mario'
 );
 
 
