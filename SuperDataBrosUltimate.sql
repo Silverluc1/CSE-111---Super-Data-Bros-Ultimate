@@ -115,8 +115,6 @@ DELETE FROM Movement WHERE characterID = 'DLC1';
 DELETE FROM Dodge WHERE characterID = 'DLC1';
 
 
-
-
 --**************************************These are the commands for Mario**************************************--
 -- Smash attacks for Mario
 SELECT smash_leftright AS LR_Smash
