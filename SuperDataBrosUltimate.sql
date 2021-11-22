@@ -73,6 +73,14 @@ CREATE TABLE Dodge(
 )
 ;
 
+CREATE TABLE Grab(---------------------------------------------FINISH DOING THIS TABLE-------------------
+
+    --the name of each character to relate to each value
+    characterID varchar(50),
+
+)
+;
+
 CREATE TABLE Ranking(
 
     --This table is to hold the final placements for the ranking system
