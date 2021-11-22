@@ -4,6 +4,11 @@
 DROP TABLE Attack;
 DROP TABLE Movement;
 DROP TABLE Dodge;
+DROP TABLE Grab;
+DROP TABLE Ranking;
+DROP TABLE RankDMG;
+DROP TABLE RankMovement;
+DROP TABLE FavChar;
 
 --Creation of empty tables
 CREATE TABLE Attack(
@@ -128,7 +133,7 @@ CREATE TABLE RankMovement(
 )
 ;
 
-CREATE TABLE FavoriteCharacters(
+CREATE TABLE FavChar(
 
     --Table for users to store their favorite characters (up to 5) and a small description of why (255 char)
     characterID varchar(50),
