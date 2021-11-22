@@ -77,10 +77,34 @@ CREATE TABLE Ranking(
 
     --This table is for the ranking system
     characterID varchar(50),
-    category varchar(50),
     rank int
-    )
-    ;
+)
+;
+
+CREATE TABLE RankCategoryDMG(
+
+    --Junction Table for many-to-many relationship between the Rank and the categories
+    characterID varchar(50),
+    rank int,
+
+    smash_leftright long,
+    smash_down long,
+    smash_up long,
+    
+    tilt_leftright long,
+    tilt_down long,
+    tilt_up long,
+
+    special_leftright long,
+    special_down long,
+    special_up long,
+
+    aerial_right long,
+    aerial_left long,
+    aerial_up long,
+    aerial_down long
+)
+;
 
 --INSERTION of data into empty tables
 
