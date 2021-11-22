@@ -127,6 +127,15 @@ CREATE TABLE RankMovement(
     d_fallspeed int
 )
 ;
+
+CREATE TABLE FavoriteCharacters(
+
+    --Table for users to store their favorite characters (up to 5) and a small description of why (255 char)
+    characterID varchar(50),
+    description varchar(255)
+)
+;
+
 --INSERTION of data into empty tables
 
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
