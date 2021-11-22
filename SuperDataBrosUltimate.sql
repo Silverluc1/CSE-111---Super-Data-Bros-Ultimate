@@ -75,13 +75,13 @@ CREATE TABLE Dodge(
 
 CREATE TABLE Ranking(
 
-    --This table is for the ranking system
+    --This table is to hold the final placements for the ranking system
     characterID varchar(50),
     rank int
 )
 ;
 
-CREATE TABLE RankCategoryDMG(
+CREATE TABLE RankDMG(
 
     --Junction Table for many-to-many relationship between the Rank and the categories
     characterID varchar(50),
@@ -106,6 +106,19 @@ CREATE TABLE RankCategoryDMG(
 )
 ;
 
+CREATE TABLE RankMovement(
+
+    --Junction Table for many to many relationship between Rank and Movement
+    characterID varchar(50),
+    rank int,
+
+    lr_walk long,
+    lr_run long,
+    lw_air long,
+    u_height long,
+    d_fallspeed int
+)
+;
 --INSERTION of data into empty tables
 
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
