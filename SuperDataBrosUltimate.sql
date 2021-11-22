@@ -636,3 +636,7 @@ WHERE(
 );
 
 --**************************************END of the commands for Simon**************************************--
+
+--1st idea for complex query that involves more than 3 tables
+--Using the ranking sustem we make a query that joins the Rank, RankCategory, and the Attack
+--this way we grab the info from the attack, sort it in the category, and then put positioning in Rank
