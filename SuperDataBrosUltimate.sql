@@ -642,11 +642,17 @@ WHERE(
 
 --**************************************END of the commands for Simon**************************************--
 
+--This query is to put a bookmarked character into the favorites table.
+-- It would be conditional statement when user clicks a button,
+--It would insert the character as well as a small user input description of the character
+-- into the FavChar table
+INSERT INTO FavChar VALUES( characterID, description)
+
 --1st idea for complex query that involves more than 3 tables
 --Using the ranking sustem we make a query that joins the Rank, RankCategory, and the Attack
 --this way we grab the info from the attack, sort it in the category, and then put positioning in Rank
 
---2nd idea for complex query is the ranking system for the movement category.
+--ranking system for the movement category.
 --Kinda Iffy since it would be the same as the 1st one. 
 
 --we can use the favorite system to interact with the ranks and displays the rank's dmg
