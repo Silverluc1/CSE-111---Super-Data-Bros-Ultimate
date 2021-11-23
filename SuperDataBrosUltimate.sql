@@ -10,8 +10,8 @@ DROP TABLE RankMovement;
 DROP TABLE FavChar;
 
 --For now number of set characters is 12 + 1DLC
-DECLARE @Counter Int
-SET Counter = 1
+--DECLARE @Counter Int
+--SET Counter = 1
 
 --Creation of empty tables
 CREATE TABLE Attack(
@@ -177,7 +177,7 @@ INSERT INTO Dodge VALUES('King K. Rool',28, '3-18', 32, '4-16', 46, '4-30');
 INSERT INTO Dodge VALUES('Pikachu', 24, '3-16', 28, '4-14', 50, '2-26');
 INSERT INTO Dodge VALUES('R.O.B', 25, '3-17', 29, '4-15', 50, '3-29');
 INSERT INTO Dodge VALUES('Falco', 25, '3-17', 29, '4-15', 43, '2-27');
-INSERT INTO Dodge VALUES('Peach', 26, '3-17', 30, '4-15', 61,);
+INSERT INTO Dodge VALUES('Peach', 26, '3-17', 30, '4-15', 61, '3-30');
 INSERT INTO Dodge VALUES ('DLC1', 0, 'N/A', 0, 'N/A', 0, 'N/A');
 
 INSERT INTO RankDMG VALUES('Mario', 0, 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
@@ -704,10 +704,8 @@ WHERE(
 -- It would be conditional statement when user clicks a button,
 --It would insert the character as well as a small user input description of the character
 -- into the FavChar table
-INSERT INTO FavChar VALUES( characterID, description)
+--INSERT INTO FavChar VALUES( characterID, description)
 
-
-WHILE( @Counter
 
 --1st idea for complex query that involves more than 3 tables
 --Using the ranking sustem we make a query that joins the Rank, RankCategory, and the Attack
