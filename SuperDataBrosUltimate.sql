@@ -654,3 +654,8 @@ WHERE(
 --1st idea for complex query that involves more than 3 tables
 --Using the ranking sustem we make a query that joins the Rank, RankCategory, and the Attack
 --this way we grab the info from the attack, sort it in the category, and then put positioning in Rank
+
+--2nd idea for complex query is the ranking system for the movement category.
+--Kinda Iffy since it would be the same as the 1st one. 
+
+--we can use the favorite system to interact with the ranks and displays the rank's dmg
