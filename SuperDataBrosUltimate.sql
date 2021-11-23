@@ -4,7 +4,6 @@
 DROP TABLE Attack;
 DROP TABLE Movement;
 DROP TABLE Dodge;
-DROP TABLE Grab;
 DROP TABLE Ranking;
 DROP TABLE RankDMG;
 DROP TABLE RankMovement;
@@ -75,14 +74,6 @@ CREATE TABLE Dodge(
     a_total int,
     --Amount of frames where character in intangible
     a_intang varchar(10)
-)
-;
-
-CREATE TABLE Grab(---------------------------------------------FINISH DOING THIS TABLE-------------------
-
-    --the name of each character to relate to each value
-    characterID varchar(50),
-
 )
 ;
 
