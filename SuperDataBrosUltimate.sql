@@ -9,10 +9,6 @@ DROP TABLE RankDMG;
 DROP TABLE RankMovement;
 DROP TABLE FavChar;
 
---For now number of set characters is 12 + 1DLC
-DECLARE @counter Int
-SET counter = 1
-
 --Creation of empty tables
 CREATE TABLE Attack(
 
@@ -233,14 +229,6 @@ DELETE FROM Attack WHERE characterID = 'DLC1';
 DELETE FROM Movement WHERE characterID = 'DLC1';
 DELETE FROM Dodge WHERE characterID = 'DLC1';
 
-WHILE( counter < 10)
-    SELECT max(smash_leftright)
-    FROM RankDMG
-    ORDER BY smash_leftRight
-
-    UPDATE Ranking
-    SET 
-    WHERE
 --**************************************These are the commands for Mario**************************************--
 -- Smash attacks for Mario
 SELECT smash_leftright AS LR_Smash
@@ -709,7 +697,6 @@ WHERE(
 
 --**************************************END of the commands for Simon**************************************--
 
-INSERT(
 
 --This query is to put a bookmarked character into the favorites table.
 -- It would be conditional statement when user clicks a button,
@@ -718,11 +705,9 @@ INSERT(
 --INSERT INTO FavChar VALUES( characterID, description)
 
 
---1st idea for complex query that involves more than 3 tables
---Using the ranking sustem we make a query that joins the Rank, RankCategory, and the Attack
---this way we grab the info from the attack, sort it in the category, and then put positioning in Rank
-
---ranking system for the movement category.
---Kinda Iffy since it would be the same as the 1st one. 
+--Have a ranking table where the collumns are criteria,character,rank,and value
+--Order all characters based on user selected columns/all columns displayong
+--displaying one after another all the ranks.
+--use python for front end and displaying
 
 --we can use the favorite system to interact with the ranks and displays the rank's dmg
