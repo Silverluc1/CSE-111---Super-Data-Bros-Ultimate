@@ -697,6 +697,10 @@ WHERE(
 
 --**************************************END of the commands for Simon**************************************--
 
+SELECT smash_leftright + smash_down + smash_up AS SmashTotalDMG
+FROM RankDMG
+ORDER BY SmashTotalDMG DESC;
+
 
 --This query is to put a bookmarked character into the favorites table.
 -- It would be conditional statement when user clicks a button,
@@ -709,5 +713,6 @@ WHERE(
 --Order all characters based on user selected columns/all columns displayong
 --displaying one after another all the ranks.
 --use python for front end and displaying
+--order it in sql and display it in python the top 3 characters.
 
 --we can use the favorite system to interact with the ranks and displays the rank's dmg
