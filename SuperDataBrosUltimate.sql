@@ -10,8 +10,8 @@ DROP TABLE RankMovement;
 DROP TABLE FavChar;
 
 --For now number of set characters is 12 + 1DLC
---DECLARE @Counter Int
---SET Counter = 1
+DECLARE @counter Int
+SET counter = 1
 
 --Creation of empty tables
 CREATE TABLE Attack(
@@ -84,8 +84,10 @@ CREATE TABLE Dodge(
 CREATE TABLE Ranking(
 
     --This table is to hold the final placements for the ranking system
+    criteria varchar(50),
     characterID varchar(50),
-    rank int
+    rank int,
+    value long
 )
 ;
 
@@ -231,7 +233,14 @@ DELETE FROM Attack WHERE characterID = 'DLC1';
 DELETE FROM Movement WHERE characterID = 'DLC1';
 DELETE FROM Dodge WHERE characterID = 'DLC1';
 
+WHILE( counter < 10)
+    SELECT max(smash_leftright)
+    FROM RankDMG
+    ORDER BY smash_leftRight
 
+    UPDATE Ranking
+    SET 
+    WHERE
 --**************************************These are the commands for Mario**************************************--
 -- Smash attacks for Mario
 SELECT smash_leftright AS LR_Smash
@@ -699,6 +708,8 @@ WHERE(
 );
 
 --**************************************END of the commands for Simon**************************************--
+
+INSERT(
 
 --This query is to put a bookmarked character into the favorites table.
 -- It would be conditional statement when user clicks a button,
