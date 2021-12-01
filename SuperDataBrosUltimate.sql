@@ -142,8 +142,8 @@ CREATE TABLE FavChar(
 --INSERTION of data into empty tables
 
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3, 41.1, 19, 12, 30.8);
-INSERT INTO Attack VALUES('Luigi', 15.0, 15.0, 14.0, 9.0, 5.0, 6.0, 6.1, 2.0, 25.0, 8.0, 14.0, 10.0, 11.0);
-INSERT INTO Attack VALUES('Simon', 14.0, 12.0, 16.0, 10.0, 5.0, 10.0, 8.0, 2.0, 2.0, 12.0, 12.0, 12.0, 12.0);
+INSERT INTO Attack VALUES('Luigi', 15.0, 15.0, 14.0, 9.0, 5.0, 6.0, 6.1, 2.0, 25.0, 8.0, 14.0, 10.0, 11.0, 44, 20, 33.3, 43);
+INSERT INTO Attack VALUES('Simon', 14.0, 12.0, 16.0, 10.0, 5.0, 10.0, 8.0, 2.0, 2.0, 12.0, 12.0, 12.0, 12.0, 42, 25, 12, 48);
 INSERT INTO Attack VALUES('Snake', 22.0, 12.0, 14.0, 4.0, 12.0, 14.5, 7.0, 17.0, 6.0, 14.0, 16.0, 14.0, 4.0);
 INSERT INTO Attack VALUES('Mr. Game And Watch', 18.0, 15.0, 16.0, 12.0, 9.0, 7.0, 32.0, 0.0, 3.0, 12.0, 3.0, 3.0, 11.0);
 INSERT INTO Attack VALUES('Fox', 14.0, 14.0, 16.0, 6.0, 8.0, 6.0, 8.0, 2.0, 16.0, 1.8, 13.0, 5.0, 1.4);
