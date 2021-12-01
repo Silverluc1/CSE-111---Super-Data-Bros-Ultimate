@@ -714,5 +714,9 @@ ORDER BY SmashTotalDMG DESC;
 --displaying one after another all the ranks.
 --use python for front end and displaying
 --order it in sql and display it in python the top 3 characters.
+--For it to be weighted system, combine all damage into a seperate column
+-- and rank based off of that //possibly have to hardcode it in manually
+-- Then use python to see what categories to display within the ranking table
+
 
 --we can use the favorite system to interact with the ranks and displays the rank's dmg
