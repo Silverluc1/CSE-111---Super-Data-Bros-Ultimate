@@ -144,16 +144,16 @@ CREATE TABLE FavChar(
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3, 41.1, 19, 12, 30.8);
 INSERT INTO Attack VALUES('Luigi', 15.0, 15.0, 14.0, 9.0, 5.0, 6.0, 6.1, 2.0, 25.0, 8.0, 14.0, 10.0, 11.0, 44, 20, 33.3, 43);
 INSERT INTO Attack VALUES('Simon', 14.0, 12.0, 16.0, 10.0, 5.0, 10.0, 8.0, 2.0, 2.0, 12.0, 12.0, 12.0, 12.0, 42, 25, 12, 48);
-INSERT INTO Attack VALUES('Snake', 22.0, 12.0, 14.0, 4.0, 12.0, 14.5, 7.0, 17.0, 6.0, 14.0, 16.0, 14.0, 4.0);
-INSERT INTO Attack VALUES('Mr. Game And Watch', 18.0, 15.0, 16.0, 12.0, 9.0, 7.0, 32.0, 0.0, 3.0, 12.0, 3.0, 3.0, 11.0);
-INSERT INTO Attack VALUES('Fox', 14.0, 14.0, 16.0, 6.0, 8.0, 6.0, 8.0, 2.0, 16.0, 1.8, 13.0, 5.0, 1.4);
-INSERT INTO Attack VALUES('Captain Falcon', 20.0, 18.0, 14.0, 9.0, 10.0, 11.0, 10.0, 15.0, 15.6, 22.0, 13.0, 10.0, 14.0);
-INSERT INTO Attack VALUES('King K. Rool', 19.0, 18.0, 15.0, 11.0, 13.0, 12.5, 9.0, 0, 3.0, 15.5, 19.0, 14.0, 12.0);
-INSERT INTO Attack VALUES('Pikachu', 18.0, 3.0, 14.0, 9.0, 6.0, 5.0, 10.0, 15.0, 3.0, 1.3, 1.0, 6.0, 13.0);
-INSERT INTO Attack VALUES('R.O.B', 15.0, 5.0, 14.0, 8.0, 5.0, 3.0, 1.5, 3.6, 0.0, 7.0, 15.0, 1.5, 12.0);
-INSERT INTO Attack VALUES('Falco', 16.0, 15.0, 13.0, 6.0, 13.0, 3.5, 7.0, 5.0, 3.0, 1.0, 13.0, 9.0, 13.0);
-INSERT INTO Attack VALUES('Peach', 18.0, 2.0, 17.0, 8.0, 7.0, 10.0, 8.0, 8.3, 3.0, 15.0, 12.0, 6.0, 2.0);
-INSERT INTO Attack VALUES('DLC1', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO Attack VALUES('Snake', 22.0, 12.0, 14.0, 4.0, 12.0, 14.5, 7.0, 17.0, 6.0, 14.0, 16.0, 14.0, 4.0, 48, 30.5, 30, 48);
+INSERT INTO Attack VALUES('Mr. Game And Watch', 18.0, 15.0, 16.0, 12.0, 9.0, 7.0, 32.0, 0.0, 3.0, 12.0, 3.0, 3.0, 11.0, 49, 28, 35, 29);
+INSERT INTO Attack VALUES('Fox', 14.0, 14.0, 16.0, 6.0, 8.0, 6.0, 8.0, 2.0, 16.0, 1.8, 13.0, 5.0, 1.4, 44, 20, 26, 21.2);
+INSERT INTO Attack VALUES('Captain Falcon', 20.0, 18.0, 14.0, 9.0, 10.0, 11.0, 10.0, 15.0, 15.6, 22.0, 13.0, 10.0, 14.0, 52, 30, 40.6, 59);
+INSERT INTO Attack VALUES('King K. Rool', 19.0, 18.0, 15.0, 11.0, 13.0, 12.5, 9.0, 0, 3.0, 15.5, 19.0, 14.0, 12.0, 52, 36.5, 12, 60.5);
+INSERT INTO Attack VALUES('Pikachu', 18.0, 3.0, 14.0, 9.0, 6.0, 5.0, 10.0, 15.0, 3.0, 1.3, 1.0, 6.0, 13.0, 35, 20, 28, 21.3);
+INSERT INTO Attack VALUES('R.O.B', 15.0, 5.0, 14.0, 8.0, 5.0, 3.0, 1.5, 3.6, 0.0, 7.0, 15.0, 1.5, 12.0, 34, 16, 5.1, 35.5);
+INSERT INTO Attack VALUES('Falco', 16.0, 15.0, 13.0, 6.0, 13.0, 3.5, 7.0, 5.0, 3.0, 1.0, 13.0, 9.0, 13.0, 44, 22.5, 15, 36);
+INSERT INTO Attack VALUES('Peach', 18.0, 2.0, 17.0, 8.0, 7.0, 10.0, 8.0, 8.3, 3.0, 15.0, 12.0, 6.0, 2.0, 37, 25, 19.3, 33);
+INSERT INTO Attack VALUES('DLC1', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO Movement VALUES('Mario', 1.15, 1.76, 1.208, 36.33, 1.5);
 INSERT INTO Movement VALUES('Luigi', 1.134, 1.65, 0.77, 44, 1.32);
