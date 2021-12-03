@@ -5,3 +5,4 @@ from sqlite3 import Error
 #it is going to be interactable through the terminal where 
 #the user will get to do everything
 
+print('Testing 1223')
