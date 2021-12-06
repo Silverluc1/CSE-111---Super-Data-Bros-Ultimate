@@ -33,23 +33,7 @@ def closeConnection(_conn, _dbFile):
 
     print("++++++++++++++++++++++++++++++++++")
 
-def characterDataAttack( conn, userChar):
-    queryCharDataDMG = """
-        SELECT *
-        FROM Attack
-        WHERE characterID = "{}"
-    """.format(userChar)
-    cur = conn.cursor()
-    cur.execute(queryCharDataDMG)
-    final = cur.fetchall()  
-    return final
-
-def main():
-    database = r"final.sqlite"
-
-    # create a database connection
-    conn = openConnection(database)
-
+def menuScreen():
     print('Welcome to Our Application Called: Super Data Bros Ultimate! \n \n')
     print('We have gathered data of your 10 most favorite characters from the fan-favorite game!\n')
     print('To get started what would you like to do first? We have the options below: \n \n')
@@ -66,12 +50,67 @@ def main():
             userInputNum = int(userInputText)
         else:
             break
+    
+    return(userInputNum)
+
+def characterDataAttack( conn, userChar):
+    queryCharDataDMG = """
+        SELECT *
+        FROM Attack
+        WHERE characterID = "{}"
+    """.format(userChar)
+    cur = conn.cursor()
+    cur.execute(queryCharDataDMG)
+    final = cur.fetchall()  
+    return final
+
+def characterDataDodge( conn, userChar):
+    queryCharDataDodge = """
+        SELECT *
+        FROM Dodge
+        WHERE characterID = "{}"
+    """.format(userChar)
+    cur = conn.cursor()
+    cur.execute(queryCharDataDodge)
+    final = cur.fetchall()  
+    return final
+
+def characterDataMovement( conn, userChar):
+    queryCharDataMovement = """
+        SELECT *
+        FROM Movement
+        WHERE characterID = "{}"
+    """.format(userChar)
+    cur = conn.cursor()
+    cur.execute(queryCharDataMovement)
+    final = cur.fetchall()  
+    return final
+
+def main():
+    database = r"final.sqlite"
+
+    # create a database connection
+    conn = openConnection(database)
+
+    userInputNum = menuScreen()
 
 
     if(userInputNum == 1):
         print('The characters offered are:\nMario\nLuigi\nSimon\nSnake\nMr. Game And Watch\nFox\nCaptain Falcon\nKing K. Rool\nPikachu\nR.O.B\nFalco\nPeach\n')
         userChar = input('Please enter a the character you would like to see the data of: ')
-        print(characterDataAttack(conn, userChar))
+
+        print(userChar, "Mario Attack Data:\n", characterDataAttack(conn, userChar))
+        print(userChar, "Mario Movement Data:\n", characterDataMovement(conn, userChar))
+        print(userChar, "Mario Dodge Data:\n", characterDataDodge(conn, userChar))
+
+        userChar = input('If you would like to go to the main menu enter "1" OR enter "0" to Continue: ')
+        userInt = int(userChar)
+
+        if (userInt == 1 ):
+            menuScreen()
+        else:
+            print()
+
         
    
 
