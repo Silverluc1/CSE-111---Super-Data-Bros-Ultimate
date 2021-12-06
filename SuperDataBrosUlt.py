@@ -53,7 +53,7 @@ def menuScreen():
     
     return(userInputNum)
 
-def characterDataAttack( conn, userChar):
+def characterDataAttack(conn, userChar):
     queryCharDataDMG = """
         SELECT *
         FROM Attack
@@ -64,7 +64,7 @@ def characterDataAttack( conn, userChar):
     final = cur.fetchall()  
     return final
 
-def characterDataDodge( conn, userChar):
+def characterDataDodge(conn, userChar):
     queryCharDataDodge = """
         SELECT *
         FROM Dodge
@@ -75,7 +75,7 @@ def characterDataDodge( conn, userChar):
     final = cur.fetchall()  
     return final
 
-def characterDataMovement( conn, userChar):
+def characterDataMovement(conn, userChar):
     queryCharDataMovement = """
         SELECT *
         FROM Movement
@@ -85,6 +85,19 @@ def characterDataMovement( conn, userChar):
     cur.execute(queryCharDataMovement)
     final = cur.fetchall()  
     return final
+
+def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3):
+    queryRank = """
+        SELECT "{}", "{}", "{}"
+        FROM Rank
+        WHERE characterID = "{}" OR characterID = "{}" OR characterID = "{}"
+    """.format(userCatCompare1, userCatCompare2, userCatCompare3, userCharCompare1, userCharCompare2, userCharCompare3)
+    cur = conn.cursor()
+    cur.execute(queryRank)
+    final = cur.fetchall()  
+    return final
+    #.format() will put in the parameters sequentially so format it based off of what parameters get used first
+    #include a category where it would be a many-to-many relationship
 
 def main():
     database = r"final.sqlite"
@@ -109,7 +122,16 @@ def main():
         if (userInt == 1 ):
             menuScreen()
         else:
-            print()
+            print('The characters offered are:\nMario\nLuigi\nSimon\nSnake\nMr. Game And Watch\nFox\nCaptain Falcon\nKing K. Rool\nPikachu\nR.O.B\nFalco\nPeach\n')
+            userCharCompare1 = input('The First Character You Would Like To Compare: ')
+            userCharCompare2 = input('The Second Character You Would Like To Compare: ')
+            userCharCompare3 = input('The Final Character You Would Like To Compare: ')
+
+            print('What categories would you like to compare?\nsmashTotal\ntiltTotal\nspecialTotal\naerialTotal')
+            userCatCompare1 = input('The First Category You Would Like To Compare: ')
+            userCatCompare2 = input('The Second Category You Would Like To Compare: ')
+            userCatCompare3 = input('The Final Category You Would Like To Compare: ')
+
 
         
    
