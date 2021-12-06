@@ -33,37 +33,16 @@ def closeConnection(_conn, _dbFile):
 
     print("++++++++++++++++++++++++++++++++++")
 
-def characterDataAttack(userChar):
-    queryCharDataDMG = """"
+def characterDataAttack( conn, userChar):
+    queryCharDataDMG = """
         SELECT *
         FROM Attack
-        GROUP BY characterID = userChar
-    """
-
-print('Welcome to Our Application Called: Super Data Bros Ultimate! \n \n')
-print('We have gathered data of your 10 most favorite characters from the fan-favorite game!\n')
-print('To get started what would you like to do first? We have the options below: \n \n')
-print('Press 1 for Character Data and Facts\n')
-print('Press 2 for Favorited Characters\n')
-print('Press 3 for Personal Notes\n \n')
-
-userInputText = input('Please Enter In Your Selection: ')
-userInputNum = int(userInputText)
-
-while( True ):
-    if (not(1 <= userInputNum < 4)):
-        userInputText = input('Please enter a number 1-3: ')
-        userInputNum = int(userInputText)
-    else:
-        break
-
-
-if(userInputNum == 1):
-    print('The characters offered are:\nMario\nLuigi\nSimon\nSnake\nMr. Game And Watch\nFox\nCaptain Falcon\nKing K. Rool\nPikachu\nR.O.B\nFalco\nPeach\n')
-    userChar = input('Please enter a the character you would like to see the data of: ')
-
-
-
+        WHERE characterID = "{}"
+    """.format(userChar)
+    cur = conn.cursor()
+    cur.execute(queryCharDataDMG)
+    final = cur.fetchall()  
+    return final
 
 def main():
     database = r"final.sqlite"
@@ -92,6 +71,8 @@ def main():
     if(userInputNum == 1):
         print('The characters offered are:\nMario\nLuigi\nSimon\nSnake\nMr. Game And Watch\nFox\nCaptain Falcon\nKing K. Rool\nPikachu\nR.O.B\nFalco\nPeach\n')
         userChar = input('Please enter a the character you would like to see the data of: ')
+        print(characterDataAttack(conn, userChar))
+        
    
 
     closeConnection(conn, database)
