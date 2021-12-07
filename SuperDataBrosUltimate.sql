@@ -201,6 +201,8 @@ INSERT INTO RankMovement VALUES('Falco', 'Left/Right Walk Speed', 'Left/Right Ru
 INSERT INTO RankMovement VALUES('Peach', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.924, 1.595, 1.029, 30.03, 1.19);
 INSERT INTO RankMovement VALUES('DLC1', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0, 0, 0, 0, 0);
 
+INSERT INTO FavChar VALUES('Ice Climbers', 'They are fun to get people salty');
+
 /* Special Cases */
 
 --For when user selects the other version of Simon aka Richter
@@ -264,6 +266,9 @@ ORDER BY u_height DESC;
 INSERT INTO Ranking
 SELECT characterID, fallSpeed, d_fallspeed From RankMovement
 ORDER BY d_fallspeed DESC;
+
+
+
 
 --This query is to put a bookmarked character into the favorites table.
 -- It would be conditional statement when user clicks a button,

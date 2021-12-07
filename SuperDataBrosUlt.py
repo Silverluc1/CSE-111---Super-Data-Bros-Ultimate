@@ -102,10 +102,19 @@ def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3):
 def displayFavoriteTable(conn):
     queryFavDis = """
         SELECT *
-        FROM FavChar
+        FROM FavChar;
     """
     cur = conn.cursor()
     cur.execute(queryFavDis)
+    final = cur.fetchall()  
+    return final
+
+def addFavoriteChar(conn, characterID, reason):
+    queryAddFav = """
+        INSERT INTO FavChar VALUES ("{}", "{}");
+    """.format(characterID, reason)
+    cur = conn.cursor()
+    cur.execute(queryAddFav)
     final = cur.fetchall()  
     return final
 
@@ -140,12 +149,21 @@ def main():
             print(rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3))
             break
 
-    userInputNum = menuScreen()
-
     while(userInputNum == 2):
-       print('This is the current Favorite Character Table:\n')
-       displayFavoriteTable(conn)
-       
+        print('This is the current Favorite Character Table:\n')
+        print(displayFavoriteTable(conn))
+        userAddChar = input('Press 1 to add new character OR Press 0 to exit: ')
+        userAddCharNum = int(userAddChar)
+
+        if(userAddCharNum == 1):
+            characterID = input('What is the name of your favorite character? (< 50 chars) ')
+            reason = input('Why is ' + characterID + ' your favorite character? (<255 chars): \n')
+            print(addFavoriteChar(conn, characterID, reason))
+            print(displayFavoriteTable(conn))
+            break
+        else:
+            quit()
+
 
 
     closeConnection(conn, database)
