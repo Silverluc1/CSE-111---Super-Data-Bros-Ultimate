@@ -89,7 +89,7 @@ def characterDataMovement(conn, userChar):
 def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3):
     queryRank = """
         SELECT "{}", "{}", "{}"
-        FROM Rank
+        FROM Ranking
         WHERE characterID = "{}" OR characterID = "{}" OR characterID = "{}"
     """.format(userCatCompare1, userCatCompare2, userCatCompare3, userCharCompare1, userCharCompare2, userCharCompare3)
     cur = conn.cursor()
@@ -108,7 +108,7 @@ def main():
     userInputNum = menuScreen()
 
 
-    if(userInputNum == 1):
+    while(userInputNum == 1):
         print('The characters offered are:\nMario\nLuigi\nSimon\nSnake\nMr. Game And Watch\nFox\nCaptain Falcon\nKing K. Rool\nPikachu\nR.O.B\nFalco\nPeach\n')
         userChar = input('Please enter a the character you would like to see the data of: ')
 
@@ -127,10 +127,13 @@ def main():
             userCharCompare2 = input('The Second Character You Would Like To Compare: ')
             userCharCompare3 = input('The Final Character You Would Like To Compare: ')
 
-            print('What categories would you like to compare?\nsmashTotal\ntiltTotal\nspecialTotal\naerialTotal')
+            print('What categories would you like to compare?\nsmashTotal\ntiltTotal\nspecialTotal\naerialTotal\nlr_walk\nlr_run\nlw_air\nu_height\nd_fallspeed')
             userCatCompare1 = input('The First Category You Would Like To Compare: ')
             userCatCompare2 = input('The Second Category You Would Like To Compare: ')
             userCatCompare3 = input('The Final Category You Would Like To Compare: ')
+
+            print(rankCompare(userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3))
+
 
 
         
