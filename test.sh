@@ -5,4 +5,4 @@ db="final.sqlite"
 sqlite3 $db < SuperDataBrosUltimate.sql
 python3 SuperDataBrosUlt.py
 
-printf "test finished \n";
+printf "Thank You For Using Super Data Bros Ultimate! \n";

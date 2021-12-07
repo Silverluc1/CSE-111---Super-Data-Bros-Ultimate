@@ -80,9 +80,8 @@ CREATE TABLE Dodge(
 CREATE TABLE Ranking(
 
     --This table is to hold the final placements for the ranking system
-    criteria varchar(50),
     characterID varchar(50),
-    rank int,
+    criteria varchar(50),
     value long
 )
 ;
@@ -91,11 +90,10 @@ CREATE TABLE RankDMG(
 
     --Junction Table for many-to-many relationship between the Rank and the categories
     characterID varchar(50),
-    rank int,
     smashTot varchar(50),
     tiltTot varchar(50),
     specialTot varchar(50),
-    arealTot varchar(50),
+    aerialTot varchar(50),
 
     smashTotal long,
     tiltTotal long,
@@ -171,19 +169,19 @@ INSERT INTO Dodge VALUES('Peach', 26, '3-17', 30, '4-15', 61, '3-30');
 INSERT INTO Dodge VALUES ('DLC1', 0, 'N/A', 0, 'N/A', 0, 'N/A');
 
 
-INSERT INTO RankDMG VALUES('Mario', 6, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 41.1, 19, 12, 30.8);
-INSERT INTO RankDMG VALUES('Luigi', 4, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 20, 33.3, 43);
-INSERT INTO RankDMG VALUES('Simon', 5, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 42, 25, 12, 48);
-INSERT INTO RankDMG VALUES('Snake', 3, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 48, 30.5, 30, 48);
-INSERT INTO RankDMG VALUES('Mr. Game And Watch', 2, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 49, 28, 35, 29);
-INSERT INTO RankDMG VALUES('Fox', 4, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 20, 26, 21.2);
-INSERT INTO RankDMG VALUES('Captain Falcon', 1, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 52, 30, 40.6, 59);
-INSERT INTO RankDMG VALUES('King K. Rool', 1, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 52, 36.5, 12, 60.5);
-INSERT INTO RankDMG VALUES('Pikachu', 8, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 35, 20, 28, 21.3);
-INSERT INTO RankDMG VALUES('R.O.B', 9, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 34, 16, 5.1, 35.5);
-INSERT INTO RankDMG VALUES('Falco', 4, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 22.5, 15, 36);
-INSERT INTO RankDMG VALUES('Peach', 7, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 37, 25, 19.3, 33);
-INSERT INTO RankDMG VALUES('DLC1', 10, 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 0, 0, 0, 0);
+INSERT INTO RankDMG VALUES('Mario', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 41.1, 19, 12, 30.8);
+INSERT INTO RankDMG VALUES('Luigi', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 20, 33.3, 43);
+INSERT INTO RankDMG VALUES('Simon', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 42, 25, 12, 48);
+INSERT INTO RankDMG VALUES('Snake', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 48, 30.5, 30, 48);
+INSERT INTO RankDMG VALUES('Mr. Game And Watch', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 49, 28, 35, 29);
+INSERT INTO RankDMG VALUES('Fox', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 20, 26, 21.2);
+INSERT INTO RankDMG VALUES('Captain Falcon', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 52, 30, 40.6, 59);
+INSERT INTO RankDMG VALUES('King K. Rool', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 52, 36.5, 12, 60.5);
+INSERT INTO RankDMG VALUES('Pikachu', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 35, 20, 28, 21.3);
+INSERT INTO RankDMG VALUES('R.O.B', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 34, 16, 5.1, 35.5);
+INSERT INTO RankDMG VALUES('Falco', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 44, 22.5, 15, 36);
+INSERT INTO RankDMG VALUES('Peach', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 37, 25, 19.3, 33);
+INSERT INTO RankDMG VALUES('DLC1', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 0, 0, 0, 0);
 
 INSERT INTO RankMovement VALUES('Mario', 0, 1.15, 1.76, 1.208, 36.33, 1.5);
 INSERT INTO RankMovement VALUES('Luigi', 0, 1.134, 1.65, 0.77, 44, 1.32);
@@ -222,9 +220,23 @@ DELETE FROM Attack WHERE characterID = 'DLC1';
 DELETE FROM Movement WHERE characterID = 'DLC1';
 DELETE FROM Dodge WHERE characterID = 'DLC1';
 
+--Organizing values and inserting them into rank table by category
+
 INSERT INTO Ranking
-SELECT smashTot, characterID, rank, smashTotal From RankDMG
+SELECT characterID, smashTot, smashTotal From RankDMG
 ORDER BY smashTotal DESC;
+
+INSERT INTO Ranking
+SELECT characterID, tiltTot, tiltTotal From RankDMG
+ORDER BY tiltTotal DESC;
+
+INSERT INTO Ranking
+SELECT characterID, specialTot, specialTotal From RankDMG
+ORDER BY specialTotal DESC;
+
+INSERT INTO Ranking
+SELECT characterID, aerialTot, aerialTotal From RankDMG
+ORDER BY aerialTotal DESC;
 
 
 --This query is to put a bookmarked character into the favorites table.
