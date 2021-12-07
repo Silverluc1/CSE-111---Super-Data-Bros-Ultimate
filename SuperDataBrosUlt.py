@@ -118,6 +118,25 @@ def addFavoriteChar(conn, characterID, reason):
     final = cur.fetchall()  
     return final
 
+def displayNotes(conn):
+    queryNotesDis = """
+        SELECT *
+        FROM Notes;
+    """
+    cur = conn.cursor()
+    cur.execute(queryNotesDis)
+    final = cur.fetchall()  
+    return final
+
+def addNotes(conn, description):
+    queryAddNotes = """
+        INSERT INTO Notes VALUES ("{}");
+    """.format(description)
+    cur = conn.cursor()
+    cur.execute(queryAddNotes)
+    final = cur.fetchall()  
+    return final
+
 def main():
     database = r"final.sqlite"
 
@@ -164,8 +183,24 @@ def main():
         else:
             quit()
 
+    while(userInputNum == 3):
+        print('Here are your current notes: \n')
+        print(displayNotes(conn))
+        userAddNote = input('Press 1 to add a new note OR Press 0 to exit: ')
+        userAddNoteNum = int(userAddNote)
+
+        if(userAddNoteNum == 1):
+            description = input('What is the note that you want to add? (<255 chars)\n ')
+            print(addNotes(conn, description))
+            print(displayNotes(conn))
+            break
+        else:
+            quit()
 
 
+    if(userInputNum == 4):
+        quit()
+    
     closeConnection(conn, database)
 
 

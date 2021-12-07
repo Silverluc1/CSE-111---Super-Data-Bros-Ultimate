@@ -8,6 +8,7 @@ DROP TABLE Ranking;
 DROP TABLE RankDMG;
 DROP TABLE RankMovement;
 DROP TABLE FavChar;
+DROP Table Notes;
 
 --Creation of empty tables
 CREATE TABLE Attack(
@@ -128,6 +129,13 @@ CREATE TABLE FavChar(
 )
 ;
 
+CREATE TABLE Notes(
+
+    --Tbale for user's personal inputed notes
+    description varchar(255)
+)
+;
+
 --INSERTION of data into empty tables
 
 INSERT INTO Attack VALUES('Mario', 17.7, 10.0, 14.0, 7.0, 5.0, 7.0, 7.0, 0.0, 5.0, 12.0, 10.5, 7.0, 1.3);
@@ -202,6 +210,8 @@ INSERT INTO RankMovement VALUES('Peach', 'Left/Right Walk Speed', 'Left/Right Ru
 INSERT INTO RankMovement VALUES('DLC1', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0, 0, 0, 0, 0);
 
 INSERT INTO FavChar VALUES('Ice Climbers', 'They are fun to get people salty');
+
+INSERT INTO Notes VALUES('Both Inkling and Ridley is new to Super Smash Bros Ultimate.');
 
 /* Special Cases */
 
