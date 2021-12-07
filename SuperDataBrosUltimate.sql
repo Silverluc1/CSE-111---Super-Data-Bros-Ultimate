@@ -265,10 +265,6 @@ INSERT INTO Ranking
 SELECT characterID, fallSpeed, d_fallspeed From RankMovement
 ORDER BY d_fallspeed DESC;
 
-SELECT smas
-    FROM Ranking
-    WHERE characterID = 'Peach' OR characterID = 'Fox' OR characterID = 'Falco';
-
 --This query is to put a bookmarked character into the favorites table.
 -- It would be conditional statement when user clicks a button,
 --It would insert the character as well as a small user input description of the character
