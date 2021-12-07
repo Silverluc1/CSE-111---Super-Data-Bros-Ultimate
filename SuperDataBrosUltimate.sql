@@ -106,7 +106,11 @@ CREATE TABLE RankMovement(
 
     --Junction Table for many to many relationship between Rank and Movement
     characterID varchar(50),
-    rank int,
+    horizontalWalk varchar(50),
+    horizontalRun varchar(50),
+    horizonalAir varchar(50),
+    jumpHeight varchar(50),
+    fallSpeed varchar(50),
 
     lr_walk long,
     lr_run long,
@@ -183,19 +187,19 @@ INSERT INTO RankDMG VALUES('Falco', 'Smash Damage Total', 'Tilt Damage Total', '
 INSERT INTO RankDMG VALUES('Peach', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 37, 25, 19.3, 33);
 INSERT INTO RankDMG VALUES('DLC1', 'Smash Damage Total', 'Tilt Damage Total', 'Special Damage Total', 'Aerial Damage Total', 0, 0, 0, 0);
 
-INSERT INTO RankMovement VALUES('Mario', 0, 1.15, 1.76, 1.208, 36.33, 1.5);
-INSERT INTO RankMovement VALUES('Luigi', 0, 1.134, 1.65, 0.77, 44, 1.32);
-INSERT INTO RankMovement VALUES('Simon', 0, 0.76, 1.52, 0.94, 30, 1.85);
-INSERT INTO RankMovement VALUES('Snake', 0, 0.882, 1.595, 0.987, 21.62, 1.73);
-INSERT INTO RankMovement VALUES('Mr. Game and Watch', 0, 1.18, 1.679, 1.176, 27.51, 1.24);
-INSERT INTO RankMovement VALUES('Fox', 0, 1.523, 2.402, 1.11, 35, 2.1);
-INSERT INTO RankMovement VALUES('Captain Falcon', 0, 0.987, 2.552, 1.218, 37.31, 1.865);
-INSERT INTO RankMovement VALUES('King K. Rool', 0, 0.903, 1.485, 0.945, 33, 1.7);
-INSERT INTO RankMovement VALUES('Pikachu', 0, 1.302, 2.039, 0.957, 35.5, 1.55);
-INSERT INTO RankMovement VALUES('R.O.B', 0, 1.178, 1.725, 1.134, 38, 1.6);
-INSERT INTO RankMovement VALUES('Falco', 0, 1.344, 1.619, 0.977, 50.51, 1.8);
-INSERT INTO RankMovement VALUES('Peach', 0, 0.924, 1.595, 1.029, 30.03, 1.19);
-INSERT INTO RankMovement VALUES('DLC1', 0, 0, 0, 0, 0, 0);
+INSERT INTO RankMovement VALUES('Mario', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.15, 1.76, 1.208, 36.33, 1.5);
+INSERT INTO RankMovement VALUES('Luigi', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.134, 1.65, 0.77, 44, 1.32);
+INSERT INTO RankMovement VALUES('Simon', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.76, 1.52, 0.94, 30, 1.85);
+INSERT INTO RankMovement VALUES('Snake', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.882, 1.595, 0.987, 21.62, 1.73);
+INSERT INTO RankMovement VALUES('Mr. Game and Watch', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.18, 1.679, 1.176, 27.51, 1.24);
+INSERT INTO RankMovement VALUES('Fox', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.523, 2.402, 1.11, 35, 2.1);
+INSERT INTO RankMovement VALUES('Captain Falcon', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.987, 2.552, 1.218, 37.31, 1.865);
+INSERT INTO RankMovement VALUES('King K. Rool', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.903, 1.485, 0.945, 33, 1.7);
+INSERT INTO RankMovement VALUES('Pikachu', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.302, 2.039, 0.957, 35.5, 1.55);
+INSERT INTO RankMovement VALUES('R.O.B', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.178, 1.725, 1.134, 38, 1.6);
+INSERT INTO RankMovement VALUES('Falco', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 1.344, 1.619, 0.977, 50.51, 1.8);
+INSERT INTO RankMovement VALUES('Peach', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0.924, 1.595, 1.029, 30.03, 1.19);
+INSERT INTO RankMovement VALUES('DLC1', 'Left/Right Walk Speed', 'Left/Right Run Speed', 'Horizontal Aerial Speed', 'Jump Height', 'Fall Speed', 0, 0, 0, 0, 0);
 
 /* Special Cases */
 
@@ -220,7 +224,9 @@ DELETE FROM Attack WHERE characterID = 'DLC1';
 DELETE FROM Movement WHERE characterID = 'DLC1';
 DELETE FROM Dodge WHERE characterID = 'DLC1';
 
---Organizing values and inserting them into rank table by category
+--*******RANKING SYSTEM*********
+
+--Organizing values and inserting them into rank table by DMG category
 
 INSERT INTO Ranking
 SELECT characterID, smashTot, smashTotal From RankDMG
@@ -237,6 +243,27 @@ ORDER BY specialTotal DESC;
 INSERT INTO Ranking
 SELECT characterID, aerialTot, aerialTotal From RankDMG
 ORDER BY aerialTotal DESC;
+
+--Organizing values and inserting into rank table by Movement category
+INSERT INTO Ranking
+SELECT characterID, horizontalWalk, lr_walk From RankMovement
+ORDER BY lr_walk DESC;
+
+INSERT INTO Ranking
+SELECT characterID, horizontalRun, lr_run From RankMovement
+ORDER BY lr_run DESC;
+
+INSERT INTO Ranking
+SELECT characterID, horizonalAir, lw_air From RankMovement
+ORDER BY lw_air DESC;
+
+INSERT INTO Ranking
+SELECT characterID, jumpHeight, u_height From RankMovement
+ORDER BY u_height DESC;
+
+INSERT INTO Ranking
+SELECT characterID, fallSpeed, d_fallspeed From RankMovement
+ORDER BY d_fallspeed DESC;
 
 
 --This query is to put a bookmarked character into the favorites table.
