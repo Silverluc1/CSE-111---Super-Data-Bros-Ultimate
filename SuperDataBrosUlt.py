@@ -39,14 +39,15 @@ def menuScreen():
     print('To get started what would you like to do first? We have the options below: \n \n')
     print('Press 1 for Character Data and Facts\n')
     print('Press 2 for Favorited Characters\n')
-    print('Press 3 for Personal Notes\n \n')
+    print('Press 3 for Personal Notes\n')
+    print('Press 4 to Exit Application\n\n')
 
     userInputText = input('Please Enter In Your Selection: ')
     userInputNum = int(userInputText)
 
     while( True ):
-        if (not(1 <= userInputNum < 4)):
-            userInputText = input('Please enter a number 1-3: ')
+        if (not(1 <= userInputNum < 5)):
+            userInputText = input('Please enter a number 1-4: ')
             userInputNum = int(userInputText)
         else:
             break
@@ -86,18 +87,27 @@ def characterDataMovement(conn, userChar):
     final = cur.fetchall()  
     return final
 
-def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3):
+def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3):
     queryRank = """
-        SELECT "{}", "{}", "{}"
+        SELECT *
         FROM Ranking
         WHERE characterID = "{}" OR characterID = "{}" OR characterID = "{}";
-    """.format(userCatCompare1, userCatCompare2, userCatCompare3, userCharCompare1, userCharCompare2, userCharCompare3)
+    """.format(userCharCompare1, userCharCompare2, userCharCompare3)
     cur = conn.cursor()
     cur.execute(queryRank)
     final = cur.fetchall()  
     return final
     #.format() will put in the parameters sequentially so format it based off of what parameters get used first
-    #include a category where it would be a many-to-many relationship
+ 
+def displayFavoriteTable(conn):
+    queryFavDis = """
+        SELECT *
+        FROM FavChar
+    """
+    cur = conn.cursor()
+    cur.execute(queryFavDis)
+    final = cur.fetchall()  
+    return final
 
 def main():
     database = r"final.sqlite"
@@ -127,18 +137,16 @@ def main():
             userCharCompare2 = input('The Second Character You Would Like To Compare: ')
             userCharCompare3 = input('The Final Character You Would Like To Compare: ')
 
-            print('What categories would you like to compare?\nsmashTotal\ntiltTotal\nspecialTotal\naerialTotal\nlr_walk\nlr_run\nlw_air\nu_height\nd_fallspeed')
-            userCatCompare1 = input('The First Category You Would Like To Compare: ')
-            userCatCompare2 = input('The Second Category You Would Like To Compare: ')
-            userCatCompare3 = input('The Final Category You Would Like To Compare: ')
-
-            print(rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3))
+            print(rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3))
             break
 
+    userInputNum = menuScreen()
 
+    while(userInputNum == 2):
+       print('This is the current Favorite Character Table:\n')
+       displayFavoriteTable(conn)
+       
 
-        
-   
 
     closeConnection(conn, database)
 
