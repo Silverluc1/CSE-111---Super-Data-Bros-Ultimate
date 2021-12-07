@@ -79,7 +79,7 @@ def characterDataMovement(conn, userChar):
     queryCharDataMovement = """
         SELECT *
         FROM Movement
-        WHERE characterID = "{}"
+        WHERE characterID = "{}";
     """.format(userChar)
     cur = conn.cursor()
     cur.execute(queryCharDataMovement)
@@ -90,7 +90,7 @@ def rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, user
     queryRank = """
         SELECT "{}", "{}", "{}"
         FROM Ranking
-        WHERE characterID = "{}" OR characterID = "{}" OR characterID = "{}"
+        WHERE characterID = "{}" OR characterID = "{}" OR characterID = "{}";
     """.format(userCatCompare1, userCatCompare2, userCatCompare3, userCharCompare1, userCharCompare2, userCharCompare3)
     cur = conn.cursor()
     cur.execute(queryRank)
@@ -132,7 +132,8 @@ def main():
             userCatCompare2 = input('The Second Category You Would Like To Compare: ')
             userCatCompare3 = input('The Final Category You Would Like To Compare: ')
 
-            print(rankCompare(userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3))
+            print(rankCompare(conn, userCharCompare1, userCharCompare2, userCharCompare3, userCatCompare1, userCatCompare2, userCatCompare3))
+            break
 
 
 
